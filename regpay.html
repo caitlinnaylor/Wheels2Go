@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html><!-- Do NOT put any content outside of the HTML tags-->
+	<head>
+	<head>
+		<title> Wheels2Go - Home </title> 
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+		<script src = "myscripts.js"></script>
+		
+	</head>
+	
+	<body id = "rent">
+		<div id = "header">
+		  <img id= "logo" src="Info Website Logo-02.png" alt="logo">
+		  <ul id = "nav">
+				<li><a href= "index.html"> Home </a></li>
+				<li><a href= "faq.html"> FAQ </a> </li>
+				<li><a href= "products.html"> Services </a> </li>
+				<li><a id = "active" href= "regpay.html"> Rent </a> </li>
+		  </ul>
+		  
+		</div>
+		
+		<!-- Personal Details/Registration -->
+		<table id = "tableReg" > 
+			<form  name = "reg" onsubmit="return validateFormReg()" method = "post">
+				<tr>
+					<th><h2> Registration/Log In </h2></th>
+				</tr>
+				<tr> 
+					<td id = "existCus" > <input type="radio" name = "cusType" value = "exist" id = "exist"> I am a existing customer <br></td>
+				</tr>
+				<tr> 
+					<td id = "newCus" > <input type="radio" name = "cusType" value = "new" checked> I am a new customer <br></td>
+				</tr>
+				<tr> 
+					<td id = "regName"><textarea name = "regName" rows = "1" cols = "103"> Name </textarea></td>
+				</tr>
+				<tr> 
+					<td id = "regEmail"><textarea name = "regEmail" rows = "1" cols = "103"> Email </textarea></td>
+				</tr>
+				<tr> 
+					<td id = "regPhone"><textarea name = "regPhone" rows = "1" cols = "103"> Phone </textarea></td>
+				</tr>
+				<tr> 
+					
+					<td id = "regPassword">Password <input type = "password" name = "regPassword" size = 90 ></input></td>
+				</tr>
+				<tr> 
+					<td> <button type = "submit" name = "Submit">Submit</button></td>
+				</tr>
+				
+			</form>
+		</table>
+		
+		<!-- Inputting Order Information -->
+		<!-- form calls the relevant function on submission eg. submit button clicked -->
+		<table id = "tableRent" >
+			<form name = "type" onsubmit = "return validateFormRent(event)" method = "post">
+				<tr>
+					<th><h2> Select your Wheels </h2></th>
+				</tr>
+				<tr> 
+					<td id = "mountainBike"> <input type="radio" name = "wheelType" value = "mountainBike"> Mountain Bike <br> </td>
+				</tr>
+				<tr> 
+					<td id = "roadBike"> <input type="radio" name = "wheelType" value = "roadBike"> Road Bike <br> </td>
+				</tr>
+				<tr> 
+					<td id = "eBike"> <input type="radio" name = "wheelType" value = "eBike"> E-Bike <br> </td>
+				</tr>
+				<tr> 
+					<td id = "eScooter"> <input type="radio" name = "wheelType" value = "eScooter"> E-Scooter <br> </td>
+				</tr>
+				<tr> 
+					<td id = "monsterScooter"> <input type="radio" name = "wheelType" value = "monsterScooter"> Monster Scooter <br> </td>
+				</tr>
+				<tr>
+					<td>
+						<span id = "sizeLabel"> Size </span><select name = "size">
+							<option value="adult"> Adult </option>
+							<option value="kid"> Kid </option>
+						</select> 
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- <hr> from https://www.geeksforgeeks.org/how-to-add-horizontal-line-in-html/-->
+						<hr>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span id = "dateLabel"> Date </span><input type = "date" name = "date" min = "2023-06-8" max = "2023-07-8">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span id = "timeLabel"> Time </span><input type = "time" name = "time">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- from https://www.w3schools.com/tags/att_input_type_number.asp#:~:text=The%20%3Cinput%20type%3D%22number,specifies%20the%20minimum%20value%20allowed-->
+						<span id = "lengthLabel"> Length of Hire (Hours) </span> <input type="number" id="length" name="length"  step = "0.5" min="0.5" max="24">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span id = "pickupLabel"> Pickup Point </span><select name = "pickup">
+							<option value="Waterfront"> Wellington Waterfront </option>
+							<option value="Harbour"> Wellington Harbour </option>
+							<option value="Makara"> Mākara Peak Mountain Bike Park </option>
+							<option value="HuttRiver"> Hutt River Trail </option>
+							<option value="Remutaka"> Remutaka Cycle Trail </option>
+						</select> 
+					</td>
+				</tr>
+				<tr> 
+					<td> <button type = "submit" name = "Submit">Calculate Total</button></td>
+				</tr>
+				
+			</form>
+		</table>
+		
+		<!-- Payment Information -->
+		<div id = "payment">
+			<h3> Payment </h3>
+			<form name = "pay" onsubmit = "return validateFormPay(event)" method = "post">
+				<table id = "tablePay">
+					<tr>
+						<th colspan="4">
+							<p> Name on Card</p>
+							<textarea id = "nameCard" name = "name" rows = "1" cols = "90"></textarea>
+						</th>
+						<th>
+							<p id = "total"> Your Total is:  </p>
+						</th>
+					</tr>
+					<tr>
+						<td colspan="2" >
+							<p> Card Number </p>
+						</td> 
+						<td >
+							<p> Expiry Date </p>
+						</td>
+						<td>
+							<p> CW </p>
+						</td>
+						
+					</tr>
+					<tr>
+						<td colspan="2">
+							<textarea name = "num" rows = "1" cols = "50"></textarea>
+						</td>
+						<td >
+							<input name = "expiry" maxLength = "5">
+						</td>
+						<td>
+							<input name = "cw" maxLength = "3" >
+						</td>
+						<td>
+							<button type = "submit" name = "Submit">Pay Now</button></td>
+						</td>
+					</tr>
+			
+				</table>
+			</form>
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<footer>
+				<p> &copy; Wheels 2 Go (2023) </p>
+		</footer>
+	</body>
+</html> 

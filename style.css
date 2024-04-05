@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+body { 
+	min-height: 100vh; /* https://www.w3schools.com/cssref/pr_dim_min-height.php - used this to keep footer sticking to bottom if content is too small*/
+	background-repeat: no-repeat; /* https://www.w3schools.com/cssref/pr_background-repeat.php  - so ensure background images don't repeat*/
+	/* Grid code is based off of high school project, where reference was supplied by Dr Giovanni Moretti*/
+	display: grid;
+	width: 100%;
+	background-size: 100%;
+	grid-template:
+		"header header header header"
+		"main main main main"
+		"content content content sidebar"
+		"bot bot bot bot"
+		"footer footer footer footer";
+	grid-template-rows: auto auto 1fr auto auto;
+	grid-template-columns: 1fr auto auto 0.5fr;
+
+}
+
+/** General css */
+#header {
+	background-color: white;
+	grid-area: header;
+}
+
+h2 {
+	font-family: 'Cherry Bomb One', cursive;
+	color: white;
+	font-size: 25px;
+}
+
+h3 {
+	font-family: 'Cherry Bomb One', cursive;
+	color: #fc6012; /*orange */
+	font-size: 35px;
+	text-align: center;
+}
+
+#home {
+	background-image: url("home_background.png");
+	background-color: #0bb35e;
+	width: 100%;
+	margin: 0;
+}
+
+#faq {
+	background-color: #0bb35e;
+	background-image: url("faq_background.png");
+	margin: 0;
+}
+
+#services {
+	background-image: url("services_background.png");
+	width: 100%;
+	margin: 0;
+}
+
+#rent {
+	width: 100%;
+	margin:0;
+}
+
+#logo {
+	width: 105px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#nav {
+  width: 80%;
+  display: inline-block;
+  margin-top: 2.5%;
+  list-style: none;
+  padding-top: 2%;
+}
+
+#nav li {
+  display: inline;
+  padding: 4%;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#nav li a {
+  text-decoration: none;
+  color: #fcaa12; /* yellow */
+}
+
+#nav li a#active {
+	color: #fc6012; /* orange */
+}
+
+#nav li a:hover {
+	color: #fc6012; /* orange */
+}
+
+button {
+	padding: 0.8% 1.5% 0.8% 1.5%;
+	background-color: #fc6012; /* orange */
+	border: 0px;
+	border-radius: 15px;
+	color: white;
+	font-weight: bold;
+	font-family: 'Quicksand', sans-serif;
+	margin-left: 90%;
+	font-size: 15px;
+}
+
+
+button:hover {
+	color: #fcaa12; /* yellow */
+}
+
+
+/** Home Page */
+
+#tableHome {
+	grid-area: main; /* grid-area shows where in layout this section should be, which keeps sections in order and seperated*/
+	margin-bottom: 18%;	
+}
+
+#mainTextHome h1 {
+	background-color: white;
+	font-family: 'Cherry Bomb One', cursive;
+	color: #fc6012; /* orange */
+	font-size: 3.7vw;
+	border-radius: 30px;
+	width: 45%;
+	padding: 1%; /* Padding adds space to the actual elements eg. makes background larger, while margin adds space around element */
+	text-align: center;
+	margin-left: 26.5%;
+	margin-top: 15%;
+}
+
+#subheadingHome {
+	color: black;
+	font-family:  'Quicksand', sans-serif;
+	font-weight: bold;
+}
+
+#downArrowHome {
+	color: #09703d; /* dark green */
+	font-family:  'Quicksand', sans-serif;
+	font-weight: bold;
+}
+
+#downArrowHome:hover{
+	color: white;
+}
+
+#blurbHome {
+	grid-area: content;
+	background-color: #0bb35e; /*light green*/
+	color: white;
+	font-family:  'Quicksand', sans-serif;
+	padding: 6% 4% 4% 6%; /*top right bottom left */
+	margin: 0;
+	text-align: center;
+}
+
+#contactHome {
+	grid-area: sidebar;
+	background-color:  #0bb35e; /*light green*/
+	color: #def0fc; /* light blue */
+	font-family:  'Quicksand', sans-serif;
+	text-align: center;
+	font-size: 14px;
+}
+
+#contactHome h2 {
+	padding-top: 10%;
+}
+
+#contactHome #thirdHeading {
+	font-weight: bold;
+	font-size: 15px;
+	color: white;
+}	
+
+#contactHome a{
+	text-decoration: none;
+	color: #def0fc; /* light blue */
+}
+
+#contactHome a:hover {
+	text-decoration: underline;
+}
+
+/** FAQ Page */ 
+#faqs {
+	background-color: white;
+	border-radius: 30px;
+	padding: 3%;
+	padding-left: 5%;
+	color: #fcaa12; /* yellow */
+	font-weight: bold;
+	font-size: 18px;
+	font-family: 'Quicksand', sans-serif;
+	display: flex;
+	justify-content: space-between;
+	width: 100%; 
+	
+}
+
+#tableFAQ {
+	grid-area: main;
+	border-spacing: 0 10px; /* spacing inbetween each faq */
+	width: 75%;
+	table-layout: fixed;
+	padding-left: 20%;
+	
+}
+
+#tableFAQ th, td {
+	table-layout: fixed;
+	width: 100%;
+}
+
+/* The faq arrows - need different ids for javascript part*/
+#tireArrow, #rainArrow, #kidArrow, #accidentArrow, #registerArrow  {
+	padding-right: 5%;
+}
+
+/* The faq answers */
+#tireA, #rainA, #kidA, #accidentA, #registerA {
+	display: none;
+	font-family: 'Quicksand', sans-serif;
+	background-color: white;
+	border-radius: 30px;
+	padding: 2%;
+	font-weight: 400;
+	width: 100%; 
+	text-align: center;
+	vertical-align: center;
+	margin-left: 2%;
+	
+}
+
+#formFAQ {
+	background-color: white;
+	border-radius: 40px;
+	padding: 1%;
+	vertical-align: center;
+	margin-left: 35%;
+	width: 80%;
+	margin-bottom: 4%;
+	
+}
+
+#formFAQ h3 {
+	margin: 0.5%;
+	text-align: left;
+	padding-left: 3%;
+}
+
+#subtextForm {
+	padding-left: 3%;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#formFAQ #formName, #formFAQ #formEmail, #formFAQ #formMsg{
+	padding-top: 1%;
+	padding-left: 4.5%;
+}
+
+
+
+#formFAQ textArea {
+	padding: 1%;
+	border: 2px solid #def0fc; /*light blue*/
+	border-radius: 12px;
+	color: darkGrey;
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+/** Services Page */
+
+#locations {
+	grid-area: main;
+}
+
+#map {
+	margin-left: 23.5%;
+}
+
+#footnote {
+	color: black;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	
+}
+
+#products {
+	background-color: white;
+	border-radius: 40px;
+	padding: 2%;
+	margin: 5%;
+	grid-area: content;
+}
+
+.image_gallery {
+	height: 400px;
+	margin-bottom: 3%;
+}
+
+.mySlides {
+	display:none; /* is invisible, js functions will make one image not */
+}
+
+#products img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;
+	height: 100%; 
+    object-fit: cover;
+}
+
+
+.display-left, .display-right{
+	margin-left: 0%;
+	margin-bottom: 1%;
+}
+
+#type {
+	font-family: 'Quicksand', sans-serif;
+	color: #fcaa12; /* yellow */
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 40%;
+}
+
+.buttons {
+	display: flex;
+    justify-content: space-between;
+}
+
+#prices {
+	background-color: white;
+	border-radius: 40px;
+	padding: 3% 7% 3% 7%;
+	grid-area: sidebar;
+	font-family: 'Quicksand', sans-serif;
+	margin: 10% 10% 10% 0%;
+}
+
+#prices #title {
+	font-weight: bold;
+	color: #fc6012; /* Orange */
+	font-size: 18px;
+}
+
+#prices #subheading {
+	font-weight: bold;
+	color: #fcaa12; /* yellow */
+	font-size: 16px;
+}
+
+#prices h3 {
+	margin: 2%;
+	margin-top: 5%;
+}
+
+/** Rent Page */
+#tableReg {
+	background-color: #0bb35e; /* light green */
+	grid-area: content;
+	padding-left: 3%;
+	font-family: 'Quicksand', sans-serif;
+	color: white;
+	padding-bottom: 2%;
+}
+
+#tableReg button {
+	margin-left: 85%;
+}
+
+#tableReg h2 {
+	vertical-align: left;
+	text-align: left;
+}
+
+#tableReg textArea, input {
+	font-family: 'Quicksand', sans-serif;
+	padding: 1.7%;
+	border-radius: 15px;
+	border: none;
+	margin-top: 1%;
+}
+
+#tableReg input {
+	margin: 1.5%;
+}
+
+#tableRent {
+	background-color: #09703d; /* dark green */
+	grid-area: sidebar;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-family: 'Quicksand', sans-serif;
+	color: white;
+	padding-bottom: 2%;
+}
+
+#tableRent button {
+	margin-left: 63%;
+	width: 40%;
+	margin-top: 2%;
+}
+
+#tableRent select {
+	background-color: white;
+	border-radius: 20px;
+	padding: 1%;
+}
+
+#tableRent span {
+	padding: 1%;
+}
+
+#payment {
+	background-image: url("pay_background.png");
+	background-size: 100%;
+	grid-area: bot;
+}
+
+#tablePay {
+	background-color: white;
+	border-radius: 40px;
+	padding: 3%;
+	color: #fcaa12; /* yellow */
+	font-family: 'Quicksand', sans-serif;
+	font-weight: bold;
+	width: 95%;
+	margin-left: 2.5%;
+	margin-bottom: 3%;
+	table-layout: fixed;
+	border-spacing: 10px 0;
+}
+
+#total {
+	color: black;
+	font-size: 20px;
+}
+
+#tablePay button {
+	width: 52%;
+	margin-left: 22%;
+	padding: 3%;
+}
+
+#tablePay textArea, input {
+	padding: 1%;
+	border: 2px solid #def0fc; /*light blue*/
+	border-radius: 12px;
+}
+
+#tablePay td, th {
+	table-layout: fixed;
+}
+
+#tablePay th {
+	vertical-align: left;
+	text-align: left;
+}
+
+
+
+
+
+footer {
+  grid-area: footer;
+  background-color: #09703d; /* dark green */
+  text-align: right;
+  padding-right: 2%;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+
+	

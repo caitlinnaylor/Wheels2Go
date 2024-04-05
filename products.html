@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html><!-- Do NOT put any content outside of the HTML tags-->
+	<head>
+		<title> Wheels2Go - Home </title> 
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+		<script src = "myscripts.js"></script>
+		
+	</head>
+	
+	<body id = "services">
+		<div id = "header">
+		  <img id= "logo" src="Info Website Logo-02.png" alt="logo">
+		  <ul id = "nav">
+				<li><a href= "index.html"> Home </a></li>
+				<li><a href= "faq.html"> FAQ </a> </li>
+				<li><a id = "active" href= "products.html"> Services </a> </li>
+				<li><a href= "regpay.html"> Rent </a> </li>
+		  </ul>
+		  
+		</div>
+		
+		<div id = "locations">
+			<h3> Locations </h3>
+			<!-- google map -->
+			<iframe id = "map" src="https://www.google.com/maps/d/u/0/embed?mid=1PxyF1Na_72GZle20j44iC6ZJ0OQ74fY&ehbc=2E312F" width="680" height="450"></iframe>
+			<p id = "footnote" > Locations are pinned in blue </p>
+		</div>
+		
+		<div id = "products">
+			<h3> Available Wheels </h3>
+			<!-- Code referenced from a high school project -->
+			<div class="image_gallery">
+			  <img class="mySlides" src="mountain_bike.jpg" alt = "Mountain Bike">
+			  <img class="mySlides" src="road_bike.jpg" alt = "Road Bike">
+			  <img class="mySlides" src="electric_bike.jpg" alt = "Electic Bike">
+			  <img class="mySlides" src="e-scooter.jpg" alt = "E-Scooter">
+			  <img class="mySlides" src="monster_scooter.jpeg" alt = "Monster Scooter">
+			</div>
+			
+			<script>
+				var slideIndexx = 1;
+				const types = ["Mountain Bike", "Road Bike", "Electric Bike", "E-Scooter", "Monster Scooter"];
+				showDivs_images(slideIndexx);
+			</script>
+			
+			<span id = "type"> Mountain Bike </span>
+			<br>
+			<div class="buttons">
+				<button class="display-left" onclick="plusDivs_images(-1)">Prev</button>
+				<button class="display-right" onclick="plusDivs_images(1)">Next</button>
+			</div>
+			
+		</div>
+		
+		<div id = "prices">
+			<h3> Prices </h3>
+			<!-- span used to keep element on same line as next  -->
+			<p id = "title"> Adult-Sized: </p>
+			<p><span id = "subheading"> 30 Mins: </span> $10 </p>
+			<p><span id = "subheading"> 1 Hour: </span> $20 </p>
+			
+			<p> $15 for each subsequent hour after 1 hour ie. 3 hrs = $50 </p>
+			
+			<p id = "title"> Kid-Sized: </p>
+			<p><span id = "subheading"> 30 Mins: </span> $7 </p>
+			<p><span id = "subheading"> 1 Hour: </span> $14 </p>
+			
+			<p> $10 for each subsequent hour after 1 hour ie. 3 hrs = $34 </p>
+			
+			<p> Helmets are provided for no additional cost </p>
+		</div>
+
+
+
+
+
+
+
+
+		<br>
+		<footer>
+			<p> &copy; Wheels 2 Go (2023) </p>
+		</footer>
+
+	</body>
+</html> 

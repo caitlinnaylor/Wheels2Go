@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html><!-- Do NOT put any content outside of the HTML tags-->
+	<head>
+		<title> Wheels2Go - Home </title> 
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+		<script src = "myscripts.js"></script>
+		
+	</head>
+	
+	<body id = "faq">
+		<div id = "header">
+		  <img id= "logo" src="Info Website Logo-02.png" alt="logo">
+		  <ul id = "nav">
+				<li><a href= "index.html"> Home </a></li>
+				<li><a id = "active" href= "faq.html"> FAQ </a> </li>
+				<li><a href= "products.html"> Services </a> </li>
+				<li><a href= "regpay.html"> Rent </a> </li>
+		  </ul>
+		  
+		</div>
+		
+		<table id = "tableFAQ">
+			<tr>
+				<th id = "titleFAQ"><h3> Frequently Asked Questions </h3></th>
+			</tr><tr>
+				<td id = "faqs" onclick = "getAnswer('tireA', 'tireArrow')"> What if I get a flat tire? <span id = "tireArrow"> v <span> </th>
+			</tr><tr>
+				<td id = "tireA"> Call us at 0800 wheels2go and we'll get you set up with new wheels and add 30 mins to your time to account for time missed </td>
+			</tr><tr>
+				<td id = "faqs" onclick = "getAnswer('rainA', 'rainArrow')"> What if it starts to rain and my plans change? <span id = "rainArrow"> v <span></td>
+			</tr><tr>
+				<td id = "rainA"> If your plans change (no matter the reason), simply go to your email order confirmation and click ‘Cancel my order’. Provided you have not yet picked up your wheels, this will automatically refund you and deactivate the code. If you have already picked up your wheels, call us at 0800 wheels2go and we’ll sort something out depending on the situation </td>
+			</tr><tr>
+				<td id = "faqs" onclick = "getAnswer('accidentA', 'accidentArrow')"> Am I covered by insurance if I get into an accident? <span id = "accidentArrow"> v <span></td>
+			</tr><tr>
+				<td id = "accidentA"> Yes. Email us at wheels2go.is@gmail.com explaining the situation and we'll get it all sorted for you </td>
+			</tr><tr>
+				<td id = "faqs" onclick = "getAnswer('kidA', 'kidArrow')"> What does 'Kid-Sized' mean? <span id = "kidArrow"> v <span></td>
+			</tr><tr>
+				<td id = "kidA"> Kid-Sized gets you a medium sized bike suitable for an average 7-10 year old. </td>
+			</tr><tr>
+				<td id = "faqs" onclick = "getAnswer('registerA', 'registerArrow')"> Why do I need to register? <span id = "registerArrow"> v <span></td>
+			</tr><tr>
+				<td id = "registerA"> Registering means its a lot easier for us to keep track of your details and keep a history of past purchases. This is useful when things go wrong, allows us to group purchases made at the same time, and also gives you the occasional discount! </td>
+			</tr>
+			
+		</table>
+		
+		<form  name = "question" onsubmit="return validateFormFAQ()" method = "post">
+			<table id = "formFAQ" > 
+				<tr>
+					<th><h3> Didn't answer your question? </h3></th>
+				</tr>
+				<tr> 
+					<td id = "subtextForm" > Fill out this form or email us directly at wheels2go.qs@gmail.com</td>
+				</tr>
+				<tr> 
+					<td id = "formName" ><textarea name = "name" rows = "1" cols = "80"> Name </textarea></td>
+				</tr>
+				<tr> 
+					<td id = "formEmail"><textarea name = "email" rows = "1" cols = "80"> Email </textarea></td>
+				</tr>
+				<tr> 
+					<td id = "formMsg"><textarea name = "msg" rows = "7" cols = "80"> Message </textarea></td>
+				</tr>
+				<tr> 
+					<td> <button type = "submit" name = "Submit">Send</button></td>
+				</tr>
+				
+			</table>
+		</form>
+		
+		<br>
+		<footer>
+			<p> &copy; Wheels 2 Go (2023) </p>
+		</footer>
+		
+	</body>
+</html> 
